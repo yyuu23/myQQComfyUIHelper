@@ -1,0 +1,57 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8088,
+    "event_secret": "",
+    "request_log": true
+  },
+  "qq": {
+    "bot_qq": 123456789,
+    "api_base": "http://127.0.0.1:5700/",
+    "access_token": "",
+    "allowed_groups": [
+      987654321
+    ],
+    "processing_ack": "我已经收到图片啦，正在用 ComfyUI 转视频，大概 5-10 分钟哦。",
+    "completion_message": "你的视频已经搞定，看看效果如何？",
+    "failure_message": "抱歉，这次转换失败了，请稍后再试～"
+  },
+  "processing": {
+    "queue_size": 4,
+    "download_dir": "data/data_in",
+    "output_dir": "data/data_out",
+    "cooldown_seconds": 5,
+    "max_retries": 1,
+    "debug": false
+  },
+  "comfyui": {
+    "api_base": "http://127.0.0.1:8188",
+    "workflow_path": "workflows/image_to_video.example.json",
+    "default_width": 768,
+    "default_height": 1344,
+    "timeout_seconds": 1800,
+    "poll_interval_seconds": 5,
+    "video_extension": "mp4",
+    "workflow_overrides": {
+      "image": [
+        {
+          "node_id": 3,
+          "field": "image"
+        }
+      ],
+      "prompt": [
+        {
+          "node_id": 12,
+          "field": "text"
+        }
+      ],
+      "resolution": [
+        {
+          "node_id": 15,
+          "width_field": "width",
+          "height_field": "height"
+        }
+      ]
+    }
+  }
+}

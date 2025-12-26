@@ -1,0 +1,36 @@
+{
+  "last_node_id": 15,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "inputs": {
+        "image": "INPUT_IMAGE_PLACEHOLDER.png"
+      }
+    },
+    {
+      "id": 12,
+      "type": "PromptText",
+      "inputs": {
+        "text": "PROMPT_PLACEHOLDER"
+      }
+    },
+    {
+      "id": 15,
+      "type": "AnimateDiffVideo",
+      "inputs": {
+        "width": 768,
+        "height": 1344,
+        "clip": [
+          12,
+          0
+        ],
+        "image": [
+          3,
+          0
+        ]
+      }
+    }
+  ]
+}
